@@ -1,0 +1,552 @@
+﻿<!DOCTYPE html>
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>FFXI Gamma</title>
+    <script src="../common/ga.js"></script>
+</head>
+<body>
+    <a href="..">ffxiun0</a>
+    <h1><img src="ffxigamma.png" width="48" height="48" style="vertical-align: middle;" /> FFXI Gamma</h1>
+    <p>
+        ウィンドウモード・仮想フルスクリーンモードで動作する FINAL FANTASY XI のウィンドウを<br />
+        正しい色合いに調整し、暗い画面を明るく表示するための常駐アプリケーションです。<br />
+        他に、スクリーンショットの保存や、ウィンドウ位置の記憶といった機能も備えています。
+    </p>
+    <p>
+        <img src="ffxigamma-sample.png" /><br />
+        Copyright &copy; 2002-2015 SQUARE ENIX CO., LTD. All Rights Reserved.
+    </p>
+    <p>
+        FFXI の標準機能である「GammaBase」の設定では正しいガンマ補正を行う事ができません。<br />
+        そのため、どのような調整を行っても視認性を向上させることはできませんでした。<br />
+        このツールはディスプレイのガンマ補正をウィンドウモードでも有効にすることで、<br />
+        フルスクリーンモードと同じ色合いを再現し、「画面が暗い」と感じる問題を修正できます。
+    </p>
+    <ul>
+        <li><a href="#feature">機能</a></li>
+        <li><a href="#attention">制限・副作用など</a></li>
+        <li><a href="#requirement">システム要件</a></li>
+        <li><a href="#download">ダウンロード</a></li>
+        <li><a href="#history">変更履歴</a></li>
+        <li>
+            使い方
+            <ul>
+                <li><a href="#usage">使い方</a></li>
+                <li><a href="#usage-ffxi">同時に FFXI を起動する</a></li>
+                <li><a href="#usage-hotkey">ホットキーで画像保存できるようにする</a></li>
+                <li><a href="#usage-hotkey-sound">ホットキーでボリューム調整できるようにする</a></li>
+                <li><a href="#usage-display">表示するディスプレイを指定する</a></li>
+            </ul>
+        </li>
+        <li>
+            設定
+            <ul>
+                <li><a href="#settings-image">画像保存</a></li>
+                <li><a href="#settings-window">ウィンドウ</a></li>
+                <li><a href="#settings-sound">サウンド</a></li>
+                <li><a href="#settings-other">その他</a></li>
+            </ul>
+        </li>
+        <li><a href="#archives">過去のバージョン</a></li>
+    </ul>
+    <a name="feature"></a>
+    <h2>機能</h2>
+    <ul>
+        <li>
+            ディスプレイのガンマ値（明るさ）を動的に変更する
+            <ul>
+                <li>FFXI のウィンドウがアクティブになった場合に、ディスプレイのガンマ値を変更する。</li>
+                <li>非アクティブになった場合には、ディスプレイのガンマ値を元に戻す。</li>
+                <li>マルチディスプレイでは、表示されているディスプレイのみガンマ値が変更される。</li>
+            </ul>
+        </li>
+        <li>
+            画像の保存（スクリーンショット）
+            <ul>
+                <li>ガンマ（明るさ）補正された画像を保存できる。</li>
+                <li>画像に任意の文字を追記できる。</li>
+            </ul>
+        </li>
+        <li>
+            ウィンドウ位置の復元
+            <ul>
+                <li>FFXI 起動後、前回の表示位置に自動的にウィンドウを移動する。</li>
+                <li>仮想フルスクリーンモードのウィンドウを指定するディスプレイに表示できる。</li>
+            </ul>
+        </li>
+        <li>
+            ボリューム調整
+            <ul>
+                <li>ボリュームの調整、ミュートが行える。</li>
+            </ul>
+        </li>
+    </ul>
+    <a name="attention"></a>
+    <h2>制限・副作用など</h2>
+    <ul>
+        <li>ウィンドウモード・仮想フルスクリーンモードにのみ対応。</li>
+        <li>FFXI のウィンドウがアクティブの間は他のウィンドウの色合いがおかしくなる。</li>
+        <li>ディスプレイのガンマ値を他のツールなどで変更していた場合は、このツールにてガンマ値が上書きされてしまう。</li>
+        <li>ウィンドウが最小化されている場合は画像を保存できない。</li>
+        <li>
+            管理者権限が必要
+            <ul>
+                <li>ホットキーによる画像保存・ボリューム調整</li>
+                <li>ウィンドウ位置を復元する機能</li>
+            </ul>
+        </li>
+        <li>
+            Windows 7
+            <ul>
+                <li>DPI スケーリングモードで FFXI が動作している場合、文字サイズが想定よりも大きくなる。</li>
+            </ul>
+        </li>
+        <!-- 2017/4/11 Windows Vista のサポート終了
+                <li>Windows Vista
+                    <ul>
+                        <li>他のウィンドウが重なっている場合、重なったウィンドウが画像に含まれてしまう。</li>
+                        <li>アプリケーションのボリューム調整ができないため、マスターボリュームでの調整になる。</li>
+                    </ul>
+                </li>
+        -->
+    </ul>
+    <a name="requirement"></a>
+    <h2>システム要件</h2>
+    <ul>
+        <li>.NET Framework 4.5 以降がインストールされている事。</li>
+        <li>Windows 7 以降。</li>
+    </ul>
+    <a name="download"></a>
+    <h2>ダウンロード</h2>
+    <dl>
+        <dt>バイナリ</dt>
+        <dd>
+            <table>
+                <tr>
+                    <td>
+                        <a href="https://github.com/ffxiun0/ffxigamma/releases/download/v2.1.4/ffxigamma-2.1.4.zip">ffxigamma-2.1.4.zip</a>
+                    </td>
+                    <td>SHA256:</td>
+                    <td>0559baf8cf39dd19adb29eadd30ef72a368158dadfd00936568c0604d6cf97af</td>
+                </tr>
+            </table>
+        </dd>
+        <dt>ソースコード</dt>
+        <dd><a href="https://github.com/ffxiun0/ffxigamma">https://github.com/ffxiun0/ffxigamma</a></dd>
+        <dt>ライセンス</dt>
+        <dd><a href="https://opensource.org/licenses/MIT">MIT License</a></dd>
+    </dl>
+    <a name="history"></a>
+    <h2>変更履歴</h2>
+    <p>
+        下記を参考にして下さい。<br />
+        <a href="https://github.com/ffxiun0/ffxigamma/commits/master">https://github.com/ffxiun0/ffxigamma/commits/master</a>
+    </p>
+    <a name="usage"></a>
+    <h2>使い方</h2>
+    <ol>
+        <li>ffxigamma.exe を起動する。（タスクトレイに常駐する。FFXI の起動は後でも先でも良い）</li>
+        <li>FFXI のウィンドウをアクティブにする。（明るさが調整される）</li>
+        <li>タスクトレイの FFXI Gamma のメニューから画像を保存できる。</li>
+    </ol>
+    <a name="usage-ffxi"></a>
+    <h2>使い方（同時に FFXI を起動する）</h2>
+    <p>
+        FFXI のショートカットを実行する代わりに ffxigamma.exe を実行することで、<br />
+        FFXI の起動と FFXI Gamma の機能有効化を同時に行うことができます。<br />
+        既に ffxigamma.exe が常駐している場合は FFXI の起動のみを行います。
+    </p>
+    <ol>
+        <li>タスクトレイの FFXI Gamma のメニューから「設定」＞「オプション」を開く。</li>
+        <li>「その他」タブを開く。</li>
+        <li>「自動的にプログラムを起動する」にチェックを入れる。</li>
+        <li>
+            ホットキーなどのフル機能を使う場合
+            <ul>
+                <li>「常に管理者モードで起動する」にチェックを入れる。</li>
+            </ul>
+        </li>
+        <li>ffxigamma.exe を実行すると FFXI が起動する。</li>
+    </ol>
+    <a name="usage-hotkey"></a>
+    <h2>使い方（ホットキーで画像保存できるようにする）</h2>
+    <ol>
+        <li>タスクトレイの FFXI Gamma のメニューから「設定」＞「オプション」を開く。</li>
+        <li>「画像保存」タブを開く。</li>
+        <li>「ホットキーを有効にする」にチェックを入れる。</li>
+        <li>OKを押す。</li>
+        <li>
+            管理者モードで起動する。(管理者モードで起動していない場合のみ)
+            <ul>
+                <li>FFXI を終了しておく</li>
+                <li>
+                    タスクトレイの FFXI Gamma のメニューから「FINAL FANTASY XI を起動」をクリックする。
+                    <ul>
+                        <li>もしくは「設定」＞「管理者モードで再起動」をクリックする。でも良い。</li>
+                        <li>「管理者モードで再起動」を選んだ場合は通常通り FFXI を起動する。</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>FFXI のウィンドウをアクティブにする。</li>
+        <li>F11 キーを押すと画像を保存できる。</li>
+    </ol>
+    <a name="usage-hotkey-sound"></a>
+    <h2>使い方（ホットキーでボリューム調整できるようにする）</h2>
+    <ol>
+        <li>タスクトレイの FFXI Gamma のメニューから「設定」＞「オプション」を開く。</li>
+        <li>「サウンド」タブを開く。</li>
+        <li>「ホットキーを有効にする」にチェックを入れる。</li>
+        <li>OKを押す。</li>
+        <li>
+            管理者モードで起動する。(管理者モードで起動していない場合のみ)
+            <ul>
+                <li>FFXI を終了しておく</li>
+                <li>
+                    タスクトレイの FFXI Gamma のメニューから「FINAL FANTASY XI を起動」をクリックする。
+                    <ul>
+                        <li>もしくは「設定」＞「管理者モードで再起動」をクリックする。でも良い。</li>
+                        <li>「管理者モードで再起動」を選んだ場合は通常通り FFXI を起動する。</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>FFXI のウィンドウをアクティブにする。</li>
+        <li>F12 キーを押すとミュートされる。</li>
+        <li>Shift+F12 キーを押すとボリュームが上がる。</li>
+        <li>Shift+F11 キーを押すとボリュームが下がる。</li>
+    </ol>
+    <a name="usage-display"></a>
+    <h2>使い方（表示するディスプレイを指定する）</h2>
+    <p>仮想フルスクリーンモードのウィンドウを指定のディスプレイに表示させる方法です。</p>
+    <ol>
+        <li>タスクトレイの FFXI Gamma のメニューから「設定」＞「オプション」を開く。</li>
+        <li>「ウィンドウ」タブを開く。</li>
+        <li>「ウィンドウの位置を記憶する」にチェックを入れる。</li>
+        <li>「FINAL FANTASY XI」を選択し「編集」を押す。</li>
+        <li>
+            「ディスプレイの位置を設定」リストからディスプレイを選択する。
+            <br />（ディスプレイの位置とサイズが設定される）
+        </li>
+        <li>OKを押す。</li>
+        <li>OKを押す。</li>
+        <li>
+            管理者モードで起動する。(管理者モードで起動していない場合のみ)
+            <ul>
+                <li>FFXI を終了しておく</li>
+                <li>
+                    タスクトレイの FFXI Gamma のメニューから「FINAL FANTASY XI を起動」をクリックする。
+                    <ul>
+                        <li>もしくは「設定」＞「管理者モードで再起動」をクリックする。でも良い。</li>
+                        <li>「管理者モードで再起動」を選んだ場合は通常通り FFXI を起動する。</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ol>
+    <a name="settings-image"></a>
+    <h2>設定（画像保存）</h2>
+    <dl>
+        <dt>ガンマ補正を有効にする</dt>
+        <dd>画像をガンマ補正した状態で保存します。</dd>
+        <dt>保存先フォルダー</dt>
+        <dd>「画像をフォルダーに保存」またはホットキーで保存した場合の保存先。</dd>
+        <dt>画像形式</dt>
+        <dd>PNG と JPEG のみ選択できます。</dd>
+        <dt>ホットキーを有効にする</dt>
+        <dd>
+            指定のホットキーで画像保存を実行します。
+            <br />この機能を使うには FFXI Gamma を管理者権限で実行している必要があります。
+            <br />ホットキーはアクティブウィンドウに対してのみ有効です。
+        </dd>
+        <dt>画像に文字を追記する</dt>
+        <dd>
+            任意の文字を画像の指定の位置に追記します。
+            <br />キーワード置換機能があり日時を動的に書き込む事ができます。
+            <br />【例】@yyyy@/@M@/@d@ @HH@:@mm@:@ss@.@ff@
+            <br />【結果】2015/6/3 21:04:03.61
+            <table border="1">
+                <tr><th>キーワード</th><th>意味</th><th>値</th></tr>
+                <tr><td>@yy@</td><td>年</td><td>15</td></tr>
+                <tr><td>@yyyy@</td><td>年</td><td>2015</td></tr>
+                <tr><td>@M@</td><td>月</td><td>6</td></tr>
+                <tr><td>@MM@</td><td>月</td><td>06</td></tr>
+                <tr><td>@d@</td><td>日</td><td>3</td></tr>
+                <tr><td>@dd@</td><td>日</td><td>03</td></tr>
+                <tr><td>@ddd@</td><td>曜日</td><td>水</td></tr>
+                <tr><td>@dddd@</td><td>曜日</td><td>水曜日</td></tr>
+                <tr><td>@h@</td><td>時</td><td>9</td></tr>
+                <tr><td>@hh@</td><td>時</td><td>09</td></tr>
+                <tr><td>@H@</td><td>時(24時間)</td><td>21</td></tr>
+                <tr><td>@HH@</td><td>時(24時間)</td><td>21</td></tr>
+                <tr><td>@m@</td><td>分</td><td>4</td></tr>
+                <tr><td>@mm@</td><td>分</td><td>04</td></tr>
+                <tr><td>@s@</td><td>秒</td><td>3</td></tr>
+                <tr><td>@ss@</td><td>秒</td><td>03</td></tr>
+                <tr><td>@f@</td><td>1/10秒</td><td>6</td></tr>
+                <tr><td>@ff@</td><td>1/100秒</td><td>61</td></tr>
+                <tr><td>@tt@</td><td>午前/午後</td><td>午後</td></tr>
+                <tr><td>@z@</td><td>タイムゾーン</td><td>+9</td></tr>
+                <tr><td>@zz@</td><td>タイムゾーン</td><td>+09</td></tr>
+                <tr><td>@zzz@</td><td>タイムゾーン</td><td>+09:00</td></tr>
+            </table>
+        </dd>
+    </dl>
+    <a name="settings-window"></a>
+    <h2>設定（ウィンドウ）</h2>
+    <dl>
+        <dt>ウィンドウの位置を記憶する</dt>
+        <dd>
+            FFXI のウィンドウが表示された際にウィンドウを前回の表示位置に復元します。<br />
+            ウィンドウが閉じられた際に位置が保存されます。<br />
+            この機能を使うには FFXI Gamma を管理者権限で実行している必要があります。
+        </dd>
+        <dt>ガンマを変更するウィンドウの名前</dt>
+        <dd>
+            ウィンドウがアクティブになった際に、ガンマ値を変更するかどうかはウィンドウの名前で判断されます。<br />
+            ウィンドウ名が異なる場合はこのリストに追加する事で対応できます。
+        </dd>
+        <dt>ディスプレイの位置を設定</dt>
+        <dd>
+            指定のディスプレイの位置とサイズを設定します。<br />
+            仮想フルスクリーンモードのウィンドウを任意のディスプレイに表示させるために使用します。
+        </dd>
+        <dt>非アクティブ時にもガンマ補正をする</dt>
+        <dd>
+            対象のウィンドウが非アクティブ状態の場合にもガンマ補正を有効にします。<br />
+            マルチディスプレイ環境で仮想フルスクリーンモードを使う場合に活用できます。
+        </dd>
+    </dl>
+    <a name="settings-sound"></a>
+    <h2>設定（サウンド）</h2>
+    <dl>
+        <dt>ホットキーを有効にする</dt>
+        <dd>
+            指定のホットキーによるボリューム調整を有効にします。<br />
+            この機能を使うには FFXI Gamma を管理者権限で実行している必要があります。
+        </dd>
+    </dl>
+    <a name="settings-other"></a>
+    <h2>設定（その他）</h2>
+    <dl>
+        <dt>FFXI のガンマ値</dt>
+        <dd>
+            対象のウィンドウがアクティブになった際に設定されるガンマ値です。<br />
+            FFXI のガンマ値が 1.8、Windows のガンマ値が 2.2 であるため、1.8 / 2.2 = 0.818181818181818 が補正ガンマ値となります。
+        </dd>
+        <dt>Windows のガンマ値</dt>
+        <dd>
+            対象のウィンドウが非アクティブになった際に設定されるガンマ値です。<br />
+            1 が Windows 標準のガンマ値になります。(OS の仕組み上 1 でガンマ 2.2 となるようになっている)
+        </dd>
+        <dt>常に管理者モードで起動する</dt>
+        <dd>ffxigamma.exe 実行時、自動的に管理者モードになります。</dd>
+        <dt>自動的にプログラムを起動する。</dt>
+        <dd>
+            ffxigamma.exe 実行時、同時に FFXI または指定のプログラムを起動します。
+            <br />管理者モードを指定しなければ管理者モードにはなりません。
+        </dd>
+        <dt>起動するプログラム</dt>
+        <dd>
+            コンテキストメニューまたは自動的に起動するプログラムを指定します。<br />
+            FFXI の代わりに別のプログラムを起動する場合は「その他のプログラム」を選択します。
+        </dd>
+        <dt>プログラムのコマンドライン</dt>
+        <dd>
+            「その他のプログラム」を選択した場合に起動するプログラムのコマンドラインを記述します。<br />
+            空白を含むファイルパスは " で括る必要があります。
+        </dd>
+        <dt>通知を表示する</dt>
+        <dd>通知領域からのメッセージを表示するかを指定します。</dd>
+    </dl>
+    <a name="archives"></a>
+    <h2>過去のバージョン</h2>
+    <table>
+        <tr>
+            <td>
+                <a href="https://github.com/ffxiun0/ffxigamma/releases/download/v1.0/ffxigamma-1.0.zip">ffxigamma-1.0.zip</a>
+            </td>
+            <td>SHA256:</td>
+            <td>87c3d0708d3e85c933a34ae9ec304448a43e50d45054f0049a6debacd46892a4</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://github.com/ffxiun0/ffxigamma/releases/download/v1.0.1/ffxigamma-1.0.1.zip">ffxigamma-1.0.1.zip</a>
+            </td>
+            <td>SHA256:</td>
+            <td>b3c549a3d97c02a55c8235776afa5a6ac819a630a87c9cc9cc3a7136bf8742cc</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://github.com/ffxiun0/ffxigamma/releases/download/v1.0.2/ffxigamma-1.0.2.zip">ffxigamma-1.0.2.zip</a>
+            </td>
+            <td>SHA256:</td>
+            <td>693d0625fcba36d7e2ffc12c1bf22fc3294cc42f428af1088bd1b7d7acfd7927</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://github.com/ffxiun0/ffxigamma/releases/download/v1.1/ffxigamma-1.1.zip">ffxigamma-1.1.zip</a>
+            </td>
+            <td>SHA256:</td>
+            <td>069aa13cefbe23509ffbb3d0b246ab1a40a06bdda646ffc231541aa0f2527187</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://github.com/ffxiun0/ffxigamma/releases/download/v1.1.1/ffxigamma-1.1.1.zip">ffxigamma-1.1.1.zip</a>
+            </td>
+            <td>SHA256:</td>
+            <td>1c16cd407f9f858db2a3f0ee7e56c4a2b28ec626ffe0c8d33046b5b48e376939</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://github.com/ffxiun0/ffxigamma/releases/download/v1.1.2/ffxigamma-1.1.2.zip">ffxigamma-1.1.2.zip</a>
+            </td>
+            <td>SHA256:</td>
+            <td>b32a07d48bd4451c5ab5646ad851fb4ae7f6dfef6053364b8df8dbf3a11f9763</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://github.com/ffxiun0/ffxigamma/releases/download/v1.2/ffxigamma-1.2.zip">ffxigamma-1.2.zip</a>
+            </td>
+            <td>SHA256:</td>
+            <td>d3d00513cb0ac62001aef61fd9146f77667068aeeec4332511e994fd7774351e</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://github.com/ffxiun0/ffxigamma/releases/download/v1.3/ffxigamma-1.3.zip">ffxigamma-1.3.zip</a>
+            </td>
+            <td>SHA256:</td>
+            <td>beb169afe001f6fce8cd890006c39e4bc37974789049cbc39da4bbb53d2cb493</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://github.com/ffxiun0/ffxigamma/releases/download/v1.4/ffxigamma-1.4.zip">ffxigamma-1.4.zip</a>
+            </td>
+            <td>SHA256:</td>
+            <td>171d08433c70aaed710fa70eb364d93f361a37a79e86eff4962e377f560b688b</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://github.com/ffxiun0/ffxigamma/releases/download/v1.5/ffxigamma-1.5.zip">ffxigamma-1.5.zip</a>
+            </td>
+            <td>SHA256:</td>
+            <td>df5382d7f8c5612f3a2f60006ff1478027ff4b7bd693f8bbf7952715dbb59c97</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://github.com/ffxiun0/ffxigamma/releases/download/v1.5.1/ffxigamma-1.5.1.zip">ffxigamma-1.5.1.zip</a>
+            </td>
+            <td>SHA256:</td>
+            <td>d8552e532d69e55bbb42bc51bd57ed97e571319884a24894ad3e1b0d2bf1f6cf</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://github.com/ffxiun0/ffxigamma/releases/download/v1.5.2/ffxigamma-1.5.2.zip">ffxigamma-1.5.2.zip</a>
+            </td>
+            <td>SHA256:</td>
+            <td>368db177fc35244e64f72b6786f72cdf9d01d09fc40c8e0d6de61777bcf356fd</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://github.com/ffxiun0/ffxigamma/releases/download/v1.5.3/ffxigamma-1.5.3.zip">ffxigamma-1.5.3.zip</a>
+            </td>
+            <td>SHA256:</td>
+            <td>f12b5962e12b71c806a270c7fe8bed838e24dfc072f07070b7a6f0fd8f62edc3</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://github.com/ffxiun0/ffxigamma/releases/download/v1.6/ffxigamma-1.6.zip">ffxigamma-1.6.zip</a>
+            </td>
+            <td>SHA256:</td>
+            <td>e987a14706e651c1926d2fe80ce0fe4910b48e10f4a7933bb18a1e68a1920d41</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://github.com/ffxiun0/ffxigamma/releases/download/v1.6.1/ffxigamma-1.6.1.zip">ffxigamma-1.6.1.zip</a>
+            </td>
+            <td>SHA256:</td>
+            <td>9b71b53ca59debb78b2213770080b6795a6fb601585b853221b718cc36550d67</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://github.com/ffxiun0/ffxigamma/releases/download/v1.7/ffxigamma-1.7.zip">ffxigamma-1.7.zip</a>
+            </td>
+            <td>SHA256:</td>
+            <td>d6425b7146d6a971749479496b6a179d8ea33037bdde5bbffdb8d4ded6154517</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://github.com/ffxiun0/ffxigamma/releases/download/v1.7.1/ffxigamma-1.7.1.zip">ffxigamma-1.7.1.zip</a>
+            </td>
+            <td>SHA256:</td>
+            <td>861fe18e10cd52b10fb43641f2fda237fb3ace63b7a06dd795a28bdf98bec292</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://github.com/ffxiun0/ffxigamma/releases/download/v1.8/ffxigamma-1.8.zip">ffxigamma-1.8.zip</a>
+            </td>
+            <td>SHA256:</td>
+            <td>18d6c04a8cec8cb9a29f81dbad5034857ad33cdd11f060baa65154f75b300f32</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://github.com/ffxiun0/ffxigamma/releases/download/v1.8.1/ffxigamma-1.8.1.zip">ffxigamma-1.8.1.zip</a>
+            </td>
+            <td>SHA256:</td>
+            <td>f5dfd3e9f27d157be8a766a034c2cbdaa42f4a6ef0e18555313552d2bdc5662b</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://github.com/ffxiun0/ffxigamma/releases/download/v1.9/ffxigamma-1.9.zip">ffxigamma-1.9.zip</a>
+            </td>
+            <td>SHA256:</td>
+            <td>8047184b4259d0e95da88111f5b98f7df68141b4f8ccd62477611ad3878c892a</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://github.com/ffxiun0/ffxigamma/releases/download/v2.0/ffxigamma-2.0.zip">ffxigamma-2.0.zip</a>
+            </td>
+            <td>SHA256:</td>
+            <td>8bc0e7c4bc101aef62a1debc1a3f0c80bbd06136bcce991eb8216e0736f9938e</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://github.com/ffxiun0/ffxigamma/releases/download/v2.0.1/ffxigamma-2.0.1.zip">ffxigamma-2.0.1.zip</a>
+            </td>
+            <td>SHA256:</td>
+            <td>65700e7159968badad64ce0edd4b4e4a11c939138af315d226f1de52df065f58</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://github.com/ffxiun0/ffxigamma/releases/download/v2.1/ffxigamma-2.1.zip">ffxigamma-2.1.zip</a>
+            </td>
+            <td>SHA256:</td>
+            <td>ac9a1b261e440b7c84b1b6e8cce6c3599ea2daed94474bfcb16b6b897db9cf7f</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://github.com/ffxiun0/ffxigamma/releases/download/v2.1.1/ffxigamma-2.1.1.zip">ffxigamma-2.1.1.zip</a>
+            </td>
+            <td>SHA256:</td>
+            <td>ed4d1d3f77d170a31220a9c0635d7e6fd3c078f2b6c647a87166b08b202d6ef1</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://github.com/ffxiun0/ffxigamma/releases/download/v2.1.2/ffxigamma-2.1.2.zip">ffxigamma-2.1.2.zip</a>
+            </td>
+            <td>SHA256:</td>
+            <td>9378056932e2aa3467b4fb24f575df3c68dfb2517bdc6d92e156d4a4b52aa2d1</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://github.com/ffxiun0/ffxigamma/releases/download/v2.1.3/ffxigamma-2.1.3.zip">ffxigamma-2.1.3.zip</a>
+            </td>
+            <td>SHA256:</td>
+            <td>0840f677b995589e09fee56202bf0e29eb498b56cc32110eb96eb65fec490ba0</td>
+        </tr>
+    </table>
+    <hr />
+    <p>当ホームページに記載されている会社名・製品名・システム名などは、各社の登録商標、もしくは商標です。</p>
+</body>
+</html>
