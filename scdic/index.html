@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>FF11 連携検索辞書</title>
+    <script src="../common/ga.js"></script>
+</head>
+<body>
+    <a href="..">ffxiun0</a>
+    <h1>FF11 連携検索辞書</h1>
+    <p>IME の入力にてウェポンスキルの連携を検索する辞書です。</p>
+    <h2>ダウンロード</h2>
+    <dl>
+        <dt>FF11連携検索辞書</dt>
+        <dd>
+            <a href="https://github.com/ffxiun0/scdic/releases/download/r20191010/scdic-20191010.zip">scdic-20191010.zip</a>
+        </dd>
+        <dt>ソースコード</dt>
+        <dd><a href="https://github.com/ffxiun0/scdic">https://github.com/ffxiun0/scdic</a></dd>
+    </dl>
+    <h2>辞書ファイル</h2>
+    <table border="1">
+        <tr>
+            <th>辞書名</th>
+            <th>ファイル名</th>
+            <th>用途</th>
+        </tr>
+        <tr>
+            <td rowspan="3">FF11連携検索辞書</td>
+            <td>scdic-win8_win10.txt</td>
+            <td>Microsoft IME ユーザー辞書用 (Windows 8.1/10)</td>
+        </tr>
+        <tr>
+            <td>scdic-win7.txt</td>
+            <td>Microsoft IME ユーザー辞書用 (Windows 7)</td>
+        </tr>
+        <tr>
+            <td>scdic-google.txt</td>
+            <td>Google 日本語入力用</td>
+        </tr>
+    </table>
+    <ul>
+        <li>.dctx ファイルは 10,000 語までしか対応しないため収録していません。</li>
+        <li>.dic ファイルはシステム辞書化が失敗するため収録していません。</li>
+    </ul>
+    <h2>システム要件</h2>
+    <ul>
+        <li>Microsoft IME Windows 7</li>
+        <li>Microsoft IME Windows 8.1</li>
+        <li>Microsoft IME Windows 10</li>
+        <li>Google 日本語入力</li>
+    </ul>
+    <h2>使い方</h2>
+    <p>武器種・WS・連携属性の名前を「＞」で繋いで入力することでWSと連携属性の組み合わせが変換候補に出てきます。</p>
+    <dl>
+        <dt>【例】武器種から検索</dt>
+        <dd>
+            <dl>
+                <dt>りょうておの＞りょうておの</dt>
+                <dd>スチールサイクロン(湾曲)＞アップヒーバル(核熱)＞[核熱]</dd>
+            </dl>
+        </dd>
+    </dl>
+    <dl>
+        <dt>【例】連携属性から繋がるWSを検索</dt>
+        <dd>
+            <dl>
+                <dt>かくねつ＞りょうておの</dt>
+                <dd>(核熱)＞ウッコフューリー(分解)＞[光]</dd>
+            </dl>
+        </dd>
+    </dl>
+    <dl>
+        <dt>【例】武器種から光連携を絞り込む</dt>
+        <dd>
+            <dl>
+                <dt>りょうておの＞りょうておの＞ひかり</dt>
+                <dd>アップヒーバル(核熱)＞ウッコフューリー(分解)＞[光]</dd>
+            </dl>
+        </dd>
+    </dl>
+    <dl>
+        <dt>【例】武器種とWSを指定</dt>
+        <dd>
+            <dl>
+                <dt>かたてけん＞あっぷ</dt>
+                <dd>シャンデュシニュ(光)＞アップヒーバル(A)(光)＞[光]&lt;終&gt;</dd>
+            </dl>
+        </dd>
+    </dl>
+    <dl>
+        <dt>【例】武器種からWS一覧を見る</dt>
+        <dd>
+            <dl>
+                <dt>りょうておの</dt>
+                <dd>キーンエッジ(収縮)【両手斧】</dd>
+                <dd>フルブレイク(湾曲)【両手斧/SP/戦】</dd>
+                <dd>...</dd>
+            </dl>
+        </dd>
+    </dl>
+    <dl>
+        <dt>【例】WS名からの詳細を見る</dt>
+        <dd>
+            <dl>
+                <dt>あっぷひーばる</dt>
+                <dd>アップヒーバル(核熱/収縮)【両手斧/武神流秘奥義/戦暗剣】</dd>
+                <dd>アップヒーバル(A)(核熱/収縮/光)【両手斧/イオニック/戦】</dd>
+            </dl>
+        </dd>
+    </dl>
+    <p>【組み合わせの一覧】</p>
+    <table border="1">
+        <tr>
+            <th>入力</th>
+            <th>動作</th>
+        </tr>
+        <tr>
+            <td>武器種</td>
+            <td>武器種のWS一覧</td>
+        </tr>
+        <tr>
+            <td>WS名</td>
+            <td>WSの詳細</td>
+        </tr>
+        <tr>
+            <td>武器種＞武器種</td>
+            <td>連携検索</td>
+        </tr>
+        <tr>
+            <td>武器種＞WS名</td>
+            <td>連携検索</td>
+        </tr>
+        <tr>
+            <td>WS名＞武器種</td>
+            <td>連携検索</td>
+        </tr>
+        <tr>
+            <td>WS名＞WS名</td>
+            <td>連携検索</td>
+        </tr>
+        <tr>
+            <td>連携属性＞武器種</td>
+            <td>連携属性から繋がるWSを検索</td>
+        </tr>
+        <tr>
+            <td>連携属性＞WS名</td>
+            <td>連携属性から繋がるWSを検索</td>
+        </tr>
+        <tr>
+            <td>武器種＞武器種＞連携属性</td>
+            <td>発生する連携属性を絞って検索</td>
+        </tr>
+        <tr>
+            <td>武器種＞WS名＞連携属性</td>
+            <td>発生する連携属性を絞って検索</td>
+        </tr>
+        <tr>
+            <td>WS名＞武器種＞連携属性</td>
+            <td>発生する連携属性を絞って検索</td>
+        </tr>
+        <tr>
+            <td>連携属性＞武器種＞連携属性</td>
+            <td>発生する連携属性を絞って検索</td>
+        </tr>
+    </table>
+    <p>【武器種の読み一覧】</p>
+    <table border="1">
+        <tr><td>格闘</td><td>かくとう</td></tr>
+        <tr><td>短剣</td><td>たんけん</td></tr>
+        <tr><td>片手剣</td><td>かたてけん</td></tr>
+        <tr><td>両手剣</td><td>りょうてけん</td></tr>
+        <tr><td>片手斧</td><td>かたておの</td></tr>
+        <tr><td>両手斧</td><td>りょうておの</td></tr>
+        <tr><td>両手槍</td><td>りょうてやり</td></tr>
+        <tr><td>両手鎌</td><td>りょうてかま</td></tr>
+        <tr><td>片手刀</td><td>かたてとう</td></tr>
+        <tr><td>両手刀</td><td>りょうてとう</td></tr>
+        <tr><td>片手棍</td><td>かたてこん</td></tr>
+        <tr><td>両手棍</td><td>りょうてこん</td></tr>
+        <tr><td>弓術</td><td>きゅうじゅつ</td></tr>
+        <tr><td>射撃</td><td>しゃげき</td></tr>
+    </table>
+    <h2>インストール（Microsoft IME Windows 8.1/Windows 10）</h2>
+    <p style="color:red">
+        既にユーザー辞書を使用している場合は上書きせずに辞書ファイルをバックアップして下さい。<br />
+        容量が大きいため辞書ツールの動作不良にてユーザー辞書が壊れてしまう場合があります。
+    </p>
+    <ol>
+        <li>zipファイルを展開する。</li>
+        <li>トレイアイコンの IME を右クリック「追加辞書サービス」＞「辞書の設定」を開く。</li>
+        <li>「ユーザー辞書＞「編集」を押す。(ユーザー辞書ツールが開く)</li>
+        <li>メニューから「ファイル」＞「新規作成」を押す。</li>
+        <li>「ファイル名」に「FF11連携検索.dic」と入力し「開く」を押す。</li>
+        <li>メニューから「ツール」＞「テキスト ファイルからの登録」を押す。</li>
+        <li>「scdic-win8_win10.txt」を選択し「開く」を押す。（5分程度かかります）</li>
+        <li>ユーザー辞書ツールのウィンドウを閉じる。</li>
+        <li>IME の詳細設定ウィンドウの「ユーザー辞書」＞「参照」を押す。</li>
+        <li>「FF11連携検索.dic」を選択し、開くを押す。</li>
+    </ol>
+    <h2>インストール（Microsoft IME Windows 7）</h2>
+    <p style="color:red">
+        既にユーザー辞書を使用している場合は上書きせずに辞書ファイルをバックアップして下さい。<br />
+        容量が大きいため辞書ツールの動作不良にてユーザー辞書が壊れてしまう場合があります。
+    </p>
+    <ol>
+        <li>zipファイルを展開する。</li>
+        <li>トレイアイコンの IME を右クリック「設定」を開く。</li>
+        <li>「辞書/学習」タブを開く。</li>
+        <li>「Microsoft IME」を選択し、「プロパティ」を押す。</li>
+        <li>「辞書ツール」のアイコンを押す。(辞書ツールが開く)</li>
+        <li>メニューから「ファイル」＞「新規作成」を押す。</li>
+        <li>「ファイル名」に「FF11連携検索.dic」と入力し「開く」を押す。</li>
+        <li>メニューから「ツール」＞「テキスト ファイルからの登録」を押す。</li>
+        <li>「scdic-win7.txt」を選択し「開く」を押す。（5分程度かかります）</li>
+        <li>ユーザー辞書ツールのウィンドウを閉じる。</li>
+        <li>IME のプロパティウィンドウの「ユーザー辞書」＞「参照」を押す。</li>
+        <li>「FF11連携検索.dic」を選択し、開くを押す。</li>
+    </ol>
+    <h2>インストール（Google日本語入力）</h2>
+    <ol>
+        <li>zipファイルを展開する。</li>
+        <li>Google日本語入力のトレイアイコンを右クリックし「辞書ツール」を開く。</li>
+        <li>「管理」＞「新規辞書にインポート」を押す。</li>
+        <li>「ファイルを選択」を押し「scdic-google.txt」を選択する。</li>
+        <li>「辞書名」に「FF11連携検索辞書」と入力する。</li>
+        <li>「インポート」を押す。</li>
+    </ol>
+    <hr />
+    <p>当ホームページに記載されている会社名・製品名・システム名などは、各社の登録商標、もしくは商標です。</p>
+</body>
+</html>
