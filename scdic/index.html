@@ -14,7 +14,7 @@
     <dl>
         <dt>FF11連携検索辞書</dt>
         <dd>
-            <a href="https://github.com/ffxiun0/scdic/releases/download/r20191012/scdic-20191012.zip">scdic-20191012.zip</a>
+            <a href="https://github.com/ffxiun0/scdic/releases/download/r20191013/scdic-20191013.zip">scdic-20191013.zip</a>
         </dd>
         <dt>ソースコード</dt>
         <dd><a href="https://github.com/ffxiun0/scdic">https://github.com/ffxiun0/scdic</a></dd>
@@ -28,16 +28,29 @@
         </tr>
         <tr>
             <td rowspan="3">FF11連携検索辞書</td>
-            <td>scdic-win8_win10.txt</td>
+            <td>scdic-main-google.txt</td>
+            <td>Google 日本語入力用</td>
+        </tr>
+        <tr>
+            <td>scdic-main-win8_win10.txt</td>
             <td>Microsoft IME ユーザー辞書用 (Windows 8.1/10)</td>
         </tr>
         <tr>
-            <td>scdic-win7.txt</td>
+            <td>scdic-main-win7.txt</td>
             <td>Microsoft IME ユーザー辞書用 (Windows 7)</td>
         </tr>
         <tr>
-            <td>scdic-google.txt</td>
+            <td rowspan="3">FF11連携しない検索辞書<br />（連携が発生しない組合せを検索）</td>
+            <td>scdic-nochain-google.txt</td>
             <td>Google 日本語入力用</td>
+        </tr>
+        <tr>
+            <td>scdic-nochain-win8_win10.txt</td>
+            <td>Microsoft IME ユーザー辞書用 (Windows 8.1/10)</td>
+        </tr>
+        <tr>
+            <td>scdic-nochain-win7.txt</td>
+            <td>Microsoft IME ユーザー辞書用 (Windows 7)</td>
         </tr>
     </table>
     <ul>
@@ -110,6 +123,19 @@
             </dl>
         </dd>
     </dl>
+    <p>武器種・WS・連携属性の名前を「｜」で繋いで入力することで連携の発生しないWSの組合わせが変換候補に出てきます。</p>
+    <dl>
+        <dt>【例】連携の発生しない組合せを検索</dt>
+        <dd>
+            <dl>
+                <dt>さべっじ｜りょうてけん</dt>
+                <dd>【連携しない】サベッジブレード(分解/切断)｜レゾルーション(分解/切断)</dd>
+                <dd>【連携しない】サベッジブレード(分解/切断)｜デミディエーション(光/分解)&lt;自己連携有&gt;</dd>
+                <dd>【連携しない】サベッジブレード(分解/切断)｜フロストバイト(硬化)</dd>
+                <dd>...</dd>
+            </dl>
+        </dd>
+    </dl>
     <p>【組み合わせの一覧】</p>
     <table border="1">
         <tr>
@@ -164,6 +190,26 @@
             <td>連携属性＞武器種＞連携属性</td>
             <td>発生する連携属性を絞って検索</td>
         </tr>
+        <tr>
+            <td>武器種｜武器種</td>
+            <td>連携の発生しない組合せを検索</td>
+        </tr>
+        <tr>
+            <td>武器種｜WS名</td>
+            <td>連携の発生しない組合せを検索</td>
+        </tr>
+        <tr>
+            <td>WS名｜武器種</td>
+            <td>連携の発生しない組合せを検索</td>
+        </tr>
+        <tr>
+            <td>WS名｜WS名</td>
+            <td>連携の発生しない組合せを検索</td>
+        </tr>
+        <tr>
+            <td>むげんれんけい</td>
+            <td>無限に連携できるWSの一覧</td>
+        </tr>
     </table>
     <p>【武器種の読み一覧】</p>
     <table border="1">
@@ -182,6 +228,15 @@
         <tr><td>弓術</td><td>きゅうじゅつ</td></tr>
         <tr><td>射撃</td><td>しゃげき</td></tr>
     </table>
+    <h2>インストール（Google日本語入力）</h2>
+    <ol>
+        <li>zipファイルを展開する。</li>
+        <li>Google日本語入力のトレイアイコンを右クリックし「辞書ツール」を開く。</li>
+        <li>「管理」＞「新規辞書にインポート」を押す。</li>
+        <li>「ファイルを選択」を押し「scdic-google.txt」を選択する。</li>
+        <li>「辞書名」に「FF11連携検索辞書」と入力する。</li>
+        <li>「インポート」を押す。</li>
+    </ol>
     <h2>インストール（Microsoft IME Windows 8.1/Windows 10）</h2>
     <p style="color:red">
         既にユーザー辞書を使用している場合は上書きせずに辞書ファイルをバックアップして下さい。<br />
@@ -217,15 +272,6 @@
         <li>ユーザー辞書ツールのウィンドウを閉じる。</li>
         <li>IME のプロパティウィンドウの「ユーザー辞書」＞「参照」を押す。</li>
         <li>「FF11連携検索.dic」を選択し、開くを押す。</li>
-    </ol>
-    <h2>インストール（Google日本語入力）</h2>
-    <ol>
-        <li>zipファイルを展開する。</li>
-        <li>Google日本語入力のトレイアイコンを右クリックし「辞書ツール」を開く。</li>
-        <li>「管理」＞「新規辞書にインポート」を押す。</li>
-        <li>「ファイルを選択」を押し「scdic-google.txt」を選択する。</li>
-        <li>「辞書名」に「FF11連携検索辞書」と入力する。</li>
-        <li>「インポート」を押す。</li>
     </ol>
     <hr />
     <p>当ホームページに記載されている会社名・製品名・システム名などは、各社の登録商標、もしくは商標です。</p>
