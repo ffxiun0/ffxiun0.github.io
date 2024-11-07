@@ -1,20 +1,15 @@
-table {
+table.border {
     border-collapse: collapse;
-    border: 1px solid;
+    border: 1px solid #cccccc;
     margin: 2px;
 }
 
-th, td {
-    border: 1px solid;
-}
+    table.border th, table.border td {
+        border: 1px solid #cccccc;
+    }
 
-input {
-    border: 1px solid;
-    margin: 2px;
-}
-
-button {
-    border: 1px solid;
+input, button, select {
+    border: 1px solid #cccccc;
     margin: 2px;
 }
 
@@ -32,24 +27,17 @@ button {
         color: #6b63a5;
     }
 
-    table {
+    table.border {
         border-collapse: collapse;
         border: 1px solid #6a6a6a;
         margin: 2px;
     }
 
-    th, td {
-        border: 1px solid #6a6a6a;
-    }
+        table.border th, table.border td {
+            border: 1px solid #6a6a6a;
+        }
 
-    input {
-        color: #cccccc;
-        background-color: #303030;
-        border: 1px solid #505050;
-        margin: 2px;
-    }
-
-    button {
+    input, button, select {
         color: #cccccc;
         background-color: #303030;
         border: 1px solid #505050;
