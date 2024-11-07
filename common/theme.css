@@ -1,12 +1,58 @@
+table {
+    border-collapse: collapse;
+    border: 1px solid;
+    margin: 2px;
+}
+
+th, td {
+    border: 1px solid;
+}
+
+input {
+    border: 1px solid;
+    margin: 2px;
+}
+
+button {
+    border: 1px solid;
+    margin: 2px;
+}
+
 @media (prefers-color-scheme: dark) {
     body {
         color: #cccccc;
         background-color: #1f1f1f;
     }
+
     a:link {
         color: #2e83e6;
     }
+
     a:visited {
         color: #6b63a5;
+    }
+
+    table {
+        border-collapse: collapse;
+        border: 1px solid #6a6a6a;
+        margin: 2px;
+    }
+
+    th, td {
+        border: 1px solid #6a6a6a;
+    }
+
+    input {
+        color: #cccccc;
+        background-color: #303030;
+        border: 1px solid #505050;
+        margin: 2px;
+    }
+
+    button {
+        color: #cccccc;
+        background-color: #303030;
+        border: 1px solid #505050;
+        margin: 2px;
     }
 }
